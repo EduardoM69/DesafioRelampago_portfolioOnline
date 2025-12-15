@@ -1,7 +1,7 @@
 :root{
     /* Background */
     --bg-prin: #FCFCFC;
-    --bg-sec: #D9D9D9;
+    --bg-sec: #eeeeee;
 
     /* Texto */
     --txt-prin: #1C3861;
@@ -21,10 +21,17 @@
 main{
     font-family: 'Inter', sans-serif;
     p{ color: var(--txt-p); }
+    h1{ color: var(--txt-terc)}
 }
 
 .sessao{
     padding: 3vw;
+}
+.sessao .titulo{
+    width: 100%;
+    font-size: 3vw;
+    font-weight: bold;
+    letter-spacing: -0.1vw;
 }
 
 .sessao.primeira{
@@ -56,5 +63,47 @@ main{
     }
     span{
         color: var(--txt-prin)
+    }
+}
+.sessao.segunda{
+    background-color: var(--bg-sec);
+    text-align: center;
+    font-size: 1vw;
+    .cards{
+        margin-top: 2vw;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vw;
+        justify-content: center;
+
+        .card{
+            height: 5vw;
+            padding: 2vw 2vw;
+            flex: 1;
+            background-color: var(--bg-prin);
+            height: auto;
+            position: relative;
+            border-radius: 0.3vw;
+            max-width: 30%;
+            img{
+                position: absolute;
+                top: 2vw;
+                left: 2vw;
+                height: 3vw;
+                width: auto;
+                background-color: var(--bg-sec);
+                padding: 0.3vw;
+                border-radius: 0.3vw;
+            }
+            h2{
+                margin-top: 25%;
+                text-align: left;
+            }
+            p{
+                text-align: left;
+                margin-top: 1.5vw;
+            }
+            
+        }
     }
 }
