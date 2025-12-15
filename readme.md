@@ -16,7 +16,10 @@
 ### Paleta de cor escolhida com objetivo de dar um tom leve e de fácil vizualização à página.
 ### Fonte usada: Inter
 
-## Linguagens usadas: HTML5 e CSS3.
+## Linguagens usadas:
+* HTML5
+* CSS3
+* JavaScript
 
 ## Sites usados:
-### Icon8.com.br.
+### icon8.com.br ; icons.getbootstrap.com
