@@ -23,4 +23,4 @@
 * JavaScript
 
 ## Sites usados:
-### icon8.com.br ; icons.getbootstrap.com
+icon8.com.br ; icons.getbootstrap.com ; flaticon.com
