@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="img/icons/portfolio.ico" type="image/x-icon">
 </head>
-<body>
+<body class="">
     <main>
+        <button id="mode" class=""><img src="img/icons/brightness-high-fill.svg" alt="Color Mode Icon"></button>
         <section class="sessao primeira">
 
             <picture>
@@ -34,25 +35,25 @@
             <div class="cards">
 
                 <div class="card">
-                    <img src="img/icons/icons8-html5.svg" alt="HTML5">
+                    <picture><img src="img/icons/icons8-html5.svg" alt="HTML5"></picture>
                     <h2>HTML5</h2>
                     <p>Sempre praticando em projetos.</p>
                 </div>
                 
                 <div class="card">
-                    <img src="img/icons/icons8-css3.svg" alt="CSS3">
+                    <picture><img src="img/icons/icons8-css3.svg" alt="CSS3"></picture>
                     <h2>CSS3</h2>
                     <p>CSS básico, porém melhorando.</p>
                 </div>
                 
                 <div class="card">
-                    <img src="img/icons/icons8-javascript.svg" alt="Java Script">
+                    <picture><img src="img/icons/icons8-javascript.svg" alt="Java Script"></picture>
                     <h2>Java Script</h2>
                     <p>Aprendendo JavaScript com diversos exercícios práticos.</p>
                 </div>
                 
                 <div class="card">
-                    <img src="img/icons/icons8-git.svg" alt="Git">
+                    <picture><img src="img/icons/icons8-git.svg" alt="Git"></picture>
                     <h2>Git</h2>
                     <p>Sempre utilizando Git para enviar e atualizar projetos no Github.</p>
                 </div>
@@ -130,5 +131,33 @@
     <footer>
         <p>© 2025 Eduardo Martins </p>
     </footer>
+
+<script>
+    const btnColorMode = document.querySelector("#mode")
+    const iconTema = btnColorMode.querySelector("img")
+    const temaSalvo = localStorage.getItem("tema");
+
+    // Verifica o tema no LocalStorage
+    if (temaSalvo === "escuro") {
+        document.body.classList.add("temaEscuro");
+        iconTema.src = "img/icons/brightness-high.svg";
+    }
+
+    // Troca o tema ao apertar o botão
+    btnColorMode.addEventListener("click", () =>  {
+        if (document.body.classList.contains("temaEscuro")){
+            
+            document.body.classList.remove("temaEscuro")
+            iconTema.src = "img/icons/brightness-high-fill.svg"
+            localStorage.setItem("tema", "claro")
+
+        } else {
+
+            document.body.classList.add("temaEscuro")
+            iconTema.src = "img/icons/brightness-high.svg"
+            localStorage.setItem("tema", "escuro")
+        }
+    })
+</script>
 </body>
 </html>
