@@ -31,7 +31,7 @@ Criou a ideia base do desing da página.
 Usado para farer o protótipo do site. [veja aqui!](https://www.figma.com/design/5dMuOPmVD41dQFvm8WLA8l/portf%C3%B3lioOnline_desafioRel%C3%A2mpago?node-id=9-129&p=f&t=sRyKKyCWSfLg6lot-0)
 
 ### JavaScript
-Java Script foi usado apenas para fazer o redirecionamento para as redes sociais.
+Java Script foi usado para fazer o redirecionamento do click no card para as redes sociais e para fazer a troca de tema de tela.
 
 ## Sites usados:
 icon8.com.br ; icons.getbootstrap.com ; flaticon.com ; figma.com
