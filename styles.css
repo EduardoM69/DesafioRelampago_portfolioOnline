@@ -7,6 +7,13 @@
         transform: translateY(0);
     }
 }
+@keyframes appear{
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
 
 :root{
     /* Background */
@@ -24,7 +31,7 @@
     --btn-color2: #4aa86b;
 
     /* Borda */
-    --border-color: gainsboro;
+    --border-color: #dcdcdc;
 }
 *{
     margin: 0;
@@ -32,15 +39,20 @@
 }
 
 /* Tema escuro */
+/* =========== */
+
 body.temaEscuro {
     --bg-prin: #181B1F;
     --bg-sec: #2D3035;
+    
     --txt-prin: #FCFCFC;
     --txt-sec: #5680c0;
     --txt-terc: #FCFCFC;
     --txt-p: #B0B0B0;
-    --border-color: #444;
+    
     --btn-color2: #4abe72;
+
+    --border-color: #444;
 
     background-color: var(--bg-prin);
 
@@ -58,7 +70,6 @@ body.temaEscuro {
                     filter: invert(0.8);      
                 }
             }
-            
         }
     }
     .sessao.terceira{
@@ -123,6 +134,12 @@ body.temaEscuro {
     border-radius: 50%;
     padding: 1vw 1.2vw;
     cursor: pointer;
+    animation-name: appear;
+    animation-duration: 0.8s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
     img{
         width: 2vw;
         height: auto;
@@ -141,7 +158,6 @@ main{
     
 }
 
-
 .sessao{
     padding: 3vw;
     
@@ -154,6 +170,9 @@ main{
     animation-delay: 0.3s;
     /* Para que não ocorra bug visual */
     opacity: 0;
+}
+.cards {
+    list-style: none;
 }
 .sessao .titulo{
     width: 100%;
@@ -202,7 +221,13 @@ main{
     background-color: var(--bg-sec);
     text-align: center;
     font-size: 1vw;
-    p{padding: 0 20%;}
+    p{
+        padding: 0 20%;
+        span{
+            font-weight: bold;
+            color: var(--txt-terc);
+        }
+    }
     .cards{
         margin-top: 2vw;
         display: flex;
@@ -369,6 +394,10 @@ main{
             }
             p{
                 font-size: 1vw;
+                a{
+                    text-decoration: none;
+                    color: var(--txt-p);
+                }
             }
         }
         .card:hover{
