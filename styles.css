@@ -19,6 +19,7 @@
     /* Background */
     --bg-prin: #FCFCFC;
     --bg-sec: #eeeeee;
+    --bg-nav: #d6d6d6;
 
     /* Texto */
     --txt-prin: #1C3861;
@@ -36,6 +37,9 @@
 *{
     margin: 0;
     padding: 0;
+    transition: all;
+    transition-duration: 0.5s;
+    scroll-behavior: smooth;
 }
 
 /* Tema escuro */
@@ -44,6 +48,7 @@
 body.temaEscuro {
     --bg-prin: #181B1F;
     --bg-sec: #2D3035;
+    --bg-nav: #3f434b;
     
     --txt-prin: #FCFCFC;
     --txt-sec: #5680c0;
@@ -55,6 +60,17 @@ body.temaEscuro {
     --border-color: #444;
 
     background-color: var(--bg-prin);
+
+    nav{
+        ul{
+            a{
+                border-right: 0.05vw solid #616772;
+            }
+        }
+        ul > :last-child{
+        border: none;
+    }
+    }
 
     .sessao.primeira{
         span{
@@ -124,15 +140,11 @@ body.temaEscuro {
 
 /* Botão do tema */
 #mode {
-    z-index: 100;
-    position: fixed;
-    top: 1vw;
-    right: 1vw;
     background-color: transparent;
     color: var(--txt-sec);
     border: none;
     border-radius: 50%;
-    padding: 1vw 1.2vw;
+    padding: 0 1.2vw;
     cursor: pointer;
     animation-name: appear;
     animation-duration: 0.8s;
@@ -146,6 +158,61 @@ body.temaEscuro {
     }
 }
 
+/* Menu */
+nav{
+    z-index: 100;
+    position: fixed;
+    background-color: var(--bg-nav);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 1.2vw;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+
+    .logo{
+        display: flex;
+        font-size: 2vw;
+        margin: 0 0.5vw;
+        text-decoration: none;
+        color: var(--txt-terc);
+        font-weight: bolder;
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+        a{  
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--txt-terc);
+            padding: 0.4vw;
+            margin: 0.4vw;
+            border-right: 0.05vw solid #3f434b;
+            transition: 0.4s ease;
+            
+            position: relative;
+            overflow: hidden;
+
+            li{
+                text-align: center;
+                font-weight: bolder;
+                padding: 0.2vw 1vw 0.2vw 0.5vw;
+            }
+            &:hover{
+                color: #5981be;
+                li{
+                    font-size: 1.4vw;
+                }
+            }
+        }
+    }
+    ul > :last-child{
+        border: none;
+    }
+}
 
 main{
     font-family: 'Inter', sans-serif;
@@ -246,6 +313,36 @@ main{
             max-width: 30%;
             box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
             transition: all 0.3s;
+
+            
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -150%; 
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+                );
+                transform: skewX(-25deg);
+                transition: 0.6s;
+            }
+
+            &:hover {
+                color: #5981be;
+
+                &::after {
+                    left: 150%;
+                }
+            }
+
             picture{
                     position: absolute;
                     background-color: var(--bg-sec);
@@ -444,6 +541,16 @@ footer{
         width: 3.5vw;
     }
 
+    nav{
+        font-size: 1.8vw;
+        ul{
+            a:hover{
+                li{font-size: 2.2vw;}
+            }
+        }
+        
+    }
+
     main{
         p{
             font-size: 1.7vw;
@@ -540,12 +647,22 @@ footer{
         width: 4vw;
     }
     
+    nav{
+        font-size: 2.8vw;
+        ul{
+            a:hover{
+                li{font-size: 3.2vw;}
+            }
+        }
+    }
+    
     main{
         p{
             font-size: 2.3vw;
         }
     }
     .sessao.primeira{
+        padding-top: 5vw;
         h1{
             font-size: 8vw;
         }
@@ -649,6 +766,15 @@ footer{
         img{
             width: 6vw;
     }}
+
+    nav{
+        font-size: 4vw;
+        ul{
+            a:hover{
+                li{font-size: 4.6vw;}
+            }
+        }
+    }
 
     main{
         p{
