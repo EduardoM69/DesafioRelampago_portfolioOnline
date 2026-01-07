@@ -178,6 +178,19 @@ nav{
         color: var(--txt-terc);
         font-weight: bolder;
     }
+    
+    .ham-menu{
+        display: none;
+        cursor: pointer;
+        .barra{
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: black;
+        }
+    }
 
     ul{
         display: flex;
@@ -544,10 +557,43 @@ footer{
     nav{
         font-size: 1.8vw;
         ul{
+            position: fixed;
+            left: -100%;
+            top: 70px;
+            gap: 0;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            transition: 0.4s;
+            a{
+                border: none;
+            }
             a:hover{
                 li{font-size: 2.2vw;}
             }
         }
+        li{
+            margin: 16px;
+        }
+        ul.ativo{
+            left: 0;
+            background-color: var(--bg-nav);
+        }
+
+        .ham-menu{
+            display: block;
+        }
+        .ham-menu.ativo .barra:nth-child(2){
+            opacity: 0;
+        }
+        .ham-menu.ativo .barra:nth-child(1){
+            transform: translateY(8px) rotate(45deg);
+        }
+        .ham-menu.ativo .barra:nth-child(3){
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        
         
     }
 
