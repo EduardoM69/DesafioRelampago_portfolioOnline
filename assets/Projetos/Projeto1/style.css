@@ -1,0 +1,346 @@
+body{
+    background-color: antiquewhite;
+    margin: 0;
+}
+#voltar{
+    position: fixed;
+    top: 3%;
+    left: 0%;
+    text-decoration: none;
+    color: #181B1F;
+    font-size: 1.5em;
+    padding: 10px 20px 10px 10px;
+    border: 2px solid black;
+    border-radius: 0 30px 30px 0;
+    background-color: #fcfcfc;
+    transition: 0.3s all;
+    z-index: 999;
+}
+#voltar:hover{
+    font-size: 1.7em;
+    color: #fcfcfc;
+    background-color: #4aa86b;
+}
+
+header{
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    
+    ul{
+        background-color: aliceblue;
+        padding: 1.3em 0;
+        height: 10%;
+        width: 90%;
+        margin: 1.5em 5%;
+        border-radius: 60px;
+        li{
+            display: inline;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            a{        
+                text-decoration: none;
+                color: black;
+                transition: 0.3s;
+            }
+            a:hover{
+                transform: scale(1.5);
+                font-size: 1.1em;
+            }
+            span{
+                color: blue;
+                padding: 0;
+                margin: 0;
+                font-size: 1em;
+            }
+        }
+    }
+}
+.logo{
+    position: absolute;
+    left: 5%;
+    top: 4%;
+    font-size: 3em;
+    font-weight: bold;
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
+#seach{
+    border-radius: 30px;
+    border: 1px solid rgb(128, 128, 128);
+    background-color: #f1f1f1;
+    padding: 15px 15px;
+    position: absolute;
+    height: 16px;
+    right: 8.5%;
+    top: 28%;
+    input{
+        background-color: transparent;
+        border: none;
+    }
+}
+.profile{
+    background-color: rgb(255, 255, 255);
+    filter: invert(100%);
+    padding: 15px;
+    height: 16px;
+    border-radius: 90%;
+    text-align: center;
+    position: absolute;
+    right: 5.5%;
+    top: 28%;
+}
+.box1{
+    background-image: url(imgs/mclaren.jpg);
+    background-size: cover;
+    height: 50em;
+    .PremRent{
+        position: relative;
+        display: inline;
+        float: left;
+        top: 50%;
+        h1{
+            margin: 0;
+            width: 50%;
+            font-size: 4em;
+            margin-left: 10%;
+            position: relative;
+            float: left;
+            text-shadow: 1px 1px black;
+            color:aliceblue
+        }
+        h2{
+            font-size: 1.4em;
+            width: 300px;
+            position: relative;
+            left: 280%;
+            bottom: 7.2em;
+            color:rgb(255, 255, 255);
+            text-shadow: 1px 1px black;
+            text-align: center;
+        }
+    }
+    
+}
+.Category{
+    background-color: aliceblue;
+    height: 40em;
+    padding: 40px 30px;
+    text-align: center;
+    ul{
+        margin: 0;
+        padding: 0;
+        height: max-content;
+        list-style: none;
+        display: inline;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4em;
+        li{
+            background-color: antiquewhite;
+            display: inline-block;
+            width: 22.5%;
+            height: 80%;
+            background-size: cover;
+            background-position: center;
+            padding: 10px 0 0 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .escuro{
+            color: aliceblue;
+        }
+    }
+}
+.topic{
+    text-align: left;
+    margin-left: 2.5%;
+}
+.Trend{
+    background-color: #e7e7e7;
+    height: 38em;
+    padding: 40px 30px;
+    text-align: center;
+    ul{
+        margin: 0;
+        padding: 0;
+        height: max-content;
+        list-style: none;
+        display: inline;
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        li{
+            background-color: antiquewhite;
+            display: inline-block;
+            width: 23%;
+            height: 80%;
+            margin-right: 0;
+            background-size: cover;
+            background-position: center;
+            padding: 10px 0 0 10px;
+            text-decoration: none;
+            color: black;
+            p{
+                padding: 0;
+                margin: 0;
+
+                font-size: 3em;
+            }
+        }
+        .escuro{
+            color: aliceblue;
+        }
+    }
+}
+.blackbar{
+    display: block;
+    background-color: black;
+    a{
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        padding: 2em 2.881em;
+        text-align: center;
+        background-color: black;
+        color: gainsboro;
+    }
+    a img{
+        width: 5em;
+        height: 5em;
+    }
+    a div{
+        text-align: left;
+        width: 50%;
+        float: right;
+        padding: 13px 80px 0 0 ;
+    }
+    a:hover{
+        background-color: rgb(53, 52, 52);
+    }
+}
+.Discount{
+    height: 30em;
+    background-image: url(imgs/carroDesconto.png);
+    background-size: cover;
+    background-position: center;
+    h1{
+        margin: 0;
+        padding: 1em 0 0 1em;
+        color: aliceblue;
+        font-size: 4em;
+        width: 30%;
+    }
+    a{
+        text-decoration: none;
+        color: whitesmoke;
+        padding: 20px;
+        background-color: rgb(64, 64, 240);
+        border-radius: 30px;
+        position: relative;
+        top: 20%;
+        left: 2.5%;
+    }
+    div{
+        width: 15em;
+        height: 15em;
+        background-color: rgb(64, 64, 240);
+        position: relative;
+        left: 80%;
+        bottom: 40%;
+            text-align: left;
+        h1{
+            text-align: left;
+        }
+        p{
+            color:white;
+            text-align: center;
+            font-size: 1.7em;
+        }
+    }
+}
+.infos{
+    width: 100%;
+    height: 25em;
+    padding: 0;
+    .form{
+        float: left;
+        width: 40%;
+        height: 100%;
+        display: block;
+        form{
+            width: 100%;
+            height: 100%;
+            a{
+                width: 100%;
+                position: relative;
+                left: 8%;
+                top: 20%;
+                color: black;
+                text-decoration: none;
+                span{
+                    color:blue;
+                }
+            }
+            div{
+                position: relative;
+                top: 30%;
+                left: 8%;
+                font-size: 1.7em;
+            }
+            input{
+                width: 30%;
+                padding: 20px;
+                border: 1px solid grey;
+                border-radius: 30px;
+                position: relative;
+                left: 8%;
+                top: 33%;
+            }
+        }
+    }
+    .infobox{
+        width: 19%;
+        height: 100%;
+        display: inline-block;
+        text-align: center;
+        h2{
+            margin-top: 20%;
+            font-size: 1.4em;
+        }
+        ul{
+            
+            font-size: 1.3em;
+            list-style: none;
+            padding: 0;   
+            li:hover{
+                cursor: pointer;
+                color: grey;
+            }
+        }
+    }
+}
+.fim{
+    text-align: center;
+    background-color: rgb(17, 17, 17);
+    color: #f1f1f1;
+    padding: 0.5% 0 ;
+}
+.form{
+    width: 100%;
+    
+}
+.logoFim{
+    position: relative;
+    font-size: 3em;
+    font-weight: bold;
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
