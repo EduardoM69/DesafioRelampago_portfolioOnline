@@ -19,6 +19,7 @@
     /* Background */
     --bg-prin: #FCFCFC;
     --bg-sec: #eeeeee;
+    --bg-nav: #d6d6d6;
 
     /* Texto */
     --txt-prin: #1C3861;
@@ -36,6 +37,9 @@
 *{
     margin: 0;
     padding: 0;
+    transition: all;
+    transition-duration: 0.5s;
+    scroll-behavior: smooth;
 }
 
 /* Tema escuro */
@@ -44,6 +48,7 @@
 body.temaEscuro {
     --bg-prin: #181B1F;
     --bg-sec: #2D3035;
+    --bg-nav: #3f434b;
     
     --txt-prin: #FCFCFC;
     --txt-sec: #5680c0;
@@ -55,6 +60,22 @@ body.temaEscuro {
     --border-color: #444;
 
     background-color: var(--bg-prin);
+
+    nav{
+        ul{
+            a{
+                border-right: 0.05vw solid #616772;
+            }
+        }
+        ul > :last-child{
+        border: none;
+        }
+        .ham-menu{
+            .barra{
+                background-color: #f2f2f2;
+            }
+        }
+    }
 
     .sessao.primeira{
         span{
@@ -69,6 +90,14 @@ body.temaEscuro {
                 img{
                     filter: invert(0.8);      
                 }
+            }
+            &::after {
+                background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(128, 128, 128, 0.4),
+                transparent
+                );
             }
         }
     }
@@ -124,21 +153,15 @@ body.temaEscuro {
 
 /* Botão do tema */
 #mode {
-    z-index: 100;
-    position: fixed;
-    top: 1vw;
-    right: 1vw;
     background-color: transparent;
     color: var(--txt-sec);
     border: none;
     border-radius: 50%;
-    padding: 1vw 1.2vw;
+    padding: 0 1.2vw;
     cursor: pointer;
-    animation-name: appear;
-    animation-duration: 0.8s;
-    animation-delay: 0.8s;
-    animation-fill-mode: forwards;
-    opacity: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     img{
         width: 2vw;
@@ -146,6 +169,86 @@ body.temaEscuro {
     }
 }
 
+/* Menu */
+nav{
+    animation-name: appear;
+    animation-duration: 0.8s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index: 100;
+    position: fixed;
+    background-color: var(--bg-nav);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 1.2vw;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+
+    .logo{
+        display: flex;
+        font-size: 2vw;
+        margin: 0 0.5vw;
+        text-decoration: none;
+        color: var(--txt-terc);
+        font-weight: bolder;
+    }
+    
+    .botoes{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .ham-menu{
+        display: none;
+        cursor: pointer;
+        .barra{
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: black;
+        }
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+        a{  
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--txt-terc);
+            padding: 0.4vw;
+            margin: 0.4vw;
+            border-right: 0.05vw solid #3f434b;
+            transition: 0.4s ease;
+            
+            position: relative;
+            overflow: hidden;
+
+            li{
+                text-align: center;
+                font-weight: bolder;
+                padding: 0.2vw 1vw 0.2vw 0.5vw;
+            }
+            &:hover{
+                color: #5981be;
+                li{
+                    font-size: 1.4vw;
+                }
+            }
+        }
+    }
+    ul > :last-child{
+        border: none;
+    }
+}
 
 main{
     font-family: 'Inter', sans-serif;
@@ -160,6 +263,8 @@ main{
 
 .sessao{
     padding: 3vw;
+    /* Para a navbar não ficar sobre o conteúdo */
+    scroll-margin-top: 3vw;
     
     /* Animação */
     animation-name: fade-in;
@@ -246,6 +351,36 @@ main{
             max-width: 30%;
             box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
             transition: all 0.3s;
+
+            
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -150%; 
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(128, 128, 128, 0.4),
+                transparent
+                );
+                transform: skewX(-25deg);
+                transition: 0.6s;
+            }
+
+            &:hover {
+                color: #5981be;
+
+                &::after {
+                    left: 150%;
+                }
+            }
+
             picture{
                     position: absolute;
                     background-color: var(--bg-sec);
@@ -385,6 +520,10 @@ main{
             border: 0.025vw solid var(--border-color);
             max-width: 15%;
             transition: all 0.3s;
+
+            position: relative;
+            overflow: hidden;
+
             img{
                 width: 3vw;
                 margin-bottom: 1vw;
@@ -397,6 +536,30 @@ main{
                 a{
                     text-decoration: none;
                     color: var(--txt-p);
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -150%; 
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent
+                );
+                transform: skewX(-25deg);
+                transition: 0.6s;
+            }
+
+            &:hover {
+                color: #5981be;
+
+                &::after {
+                    left: 150%;
                 }
             }
         }
@@ -441,7 +604,56 @@ footer{
 @media screen and (max-width: 991px) {
     
     #mode img{
-        width: 3.5vw;
+        width: 2.6vw;
+    }
+
+    nav{
+        font-size: 1.8vw;
+        .logo{
+            font-size: 3.5vw;
+        }
+        .botoes{
+            margin-right: 2vw;
+    }
+        ul{
+            position: fixed;
+            left: -100%;
+            top: 3.8vw;
+            gap: 0;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            transition: 0.4s;
+            a{
+                border-right: none !important;
+            }
+            a:hover{
+                li{font-size: 2.2vw;}
+            }
+        }
+        li{
+            margin: 16px;
+        }
+        ul.ativo{
+            left: 0;
+            background-color: var(--bg-nav);
+        }
+
+        .ham-menu{
+            display: block;
+        }
+        .ham-menu.ativo .barra:nth-child(2){
+            opacity: 0;
+        }
+        .ham-menu.ativo .barra:nth-child(1){
+            transform: translateY(8px) rotate(45deg);
+        }
+        .ham-menu.ativo .barra:nth-child(3){
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        
+        
     }
 
     main{
@@ -450,6 +662,7 @@ footer{
         }
     }
     .sessao.primeira{
+        padding-top: 5vw;
         h1{
             color: var(--txt-terc);
             font-size: 7vw;
@@ -540,12 +753,26 @@ footer{
         width: 4vw;
     }
     
+    nav{
+        .logo{
+            font-size: 5vw;
+        }
+        font-size: 2.8vw;
+        ul{
+            top: 6vw;
+            a:hover{
+                li{font-size: 3.2vw;}
+            }
+        }
+    }
+    
     main{
         p{
             font-size: 2.3vw;
         }
     }
     .sessao.primeira{
+        padding-top: 8vw;
         h1{
             font-size: 8vw;
         }
@@ -650,6 +877,19 @@ footer{
             width: 6vw;
     }}
 
+    nav{
+        font-size: 4vw;
+        .logo{
+            font-size: 7vw;
+        }
+        ul{
+            top: 8.4vw;
+            a:hover{
+                li{font-size: 4.6vw;}
+            }
+        }
+    }
+ 
     main{
         p{
             font-size: 3.8vw;
@@ -661,6 +901,7 @@ footer{
     margin: 2vw;
 }
     .sessao.primeira{
+        padding-top: 10vw;
         h1{
             font-size: 10vw;
         }
@@ -751,6 +992,7 @@ footer{
                 p{
                     font-size: 2.4vw;
                 }
+                
             }
         }
     }

@@ -9,18 +9,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="img/icons/portfolio.ico" type="image/x-icon">
+    
 </head>
 <body>
     <header>
-        <button id="mode"><img src="img/icons/brightness-high-fill.svg" alt="Color Mode Icon"></button>
+        <nav>
+            <a href="#Inicio" class="logo">.PEM</a>
+            <ul class="nav-menu">
+                <a href="#Inicio"><li>Início</li></a>
+                <a href="#SobreMim"><li>Sobre Mim</li></a>
+                <a href="#MeusProjetos"><li>Meus Projetos</li></a>
+                <a href="#FaleComigo"><li>Fale Comigo</li></a>
+            </ul>
+            <div class="botoes">
+                <button id="mode"><img src="img/icons/brightness-high-fill.svg" alt="Color Mode Icon"></button>
+                <div class="ham-menu">
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                </div>
+            </div>
+            
+        </nav>
     </header>
     <main>
-        <section class="sessao primeira">
+        <section id="Inicio" class="sessao primeira">
             <picture>
-                <img src="img/ImagemPortfolio.JPG" alt="Imagem de rapaz bonito">
+                <img src="img/ImagemPortfolio.JPG" alt="Imagem de Eduardo Martins">
                 <p>Desenvolvedor</p>
             </picture>
-
+            
             <h1>Portfólio</h1>
             <h1><span>Eduardo Martins</span></h1>
             <p>Programador em desenvolvimento</p>
@@ -28,7 +46,7 @@
 
         <!--   Segunda sessão   -->
 
-        <section class="sessao segunda">
+        <section id="SobreMim" class="sessao segunda">
             <h1 class="titulo">Sobre Mim</h1>
             <p>Sempre me interessei pela tecnologia, principalmente pela área da programação.
                 Hoje finalmente estou tendo esse contato e tenho aprendido muito nessas ultimas semanas. 
@@ -65,7 +83,7 @@
 
         <!--   Terceira sessão   -->
 
-        <section class="sessao terceira">
+        <section id="MeusProjetos" class="sessao terceira">
             
             <h1 class="titulo">Meus projetos</h1>
             <p>Sessão para apresentar alguns dos meus projetos. Futuramente apresentarei muitos mais!</p>
@@ -82,7 +100,7 @@
                         <li>HTML</li>
                         <li>CSS</li>
                     </ul>
-                    <a href="Projetos/Projeto1/Projeto1.html"><img src="img/icons/box-arrow-up-right.svg"></img>Ir à página</a>
+                    <a target="_blank" href="Projetos/Projeto1/Projeto1.html"><img src="img/icons/box-arrow-up-right.svg"></img>Ir à página</a>
                 </li>
 
                 <li class="card">
@@ -95,7 +113,7 @@
                         <li>HTML</li>
                         <li>CSS</li>
                     </ul>
-                    <a href="Projetos/Projeto2/Projeto2.html"><img src="img/icons/box-arrow-up-right.svg"></img>Ir à página</a>
+                    <a target="_blank" href="Projetos/Projeto2/Projeto2.html"><img src="img/icons/box-arrow-up-right.svg"></img>Ir à página</a>
                 </li>
                 
             </ul>
@@ -103,19 +121,19 @@
 
         <!-- Sessão 4 -->
 
-        <section class="sessao quarta">
+        <section id="FaleComigo" class="sessao quarta">
             <h1 class="titulo">Fale comigo</h1>
             <ul class="cards">
 
                 <!-- document.location modifica o URL da página -->
 
-                <li onclick="document.location='https://github.com/EduardoM69';" class="card">
+                <li onclick="window.open('https://github.com/EduardoM69', '_blank')" class="card">
                     <img src="img/icons/github.svg" alt="Github">
                     <figcaption><h2>Github</h2></figcaption>
                     <p><a href="https://github.com/EduardoM69">@EduardoM69</a></p>
                 </li>
 
-                <li onclick="document.location='https://www.linkedin.com/in/eduardo-martins-dias-de-oliveira-ba86a524b/';" class="card">
+                <li onclick="window.open('https://www.linkedin.com/in/eduardo-martins-dias-de-oliveira-ba86a524b/', '_blank')" class="card">
                     <img src="img/icons/linkedin.svg" alt="LinkedIn">
                     <figcaption><h2>LinkedIn</h2></figcaption>
                     <p><a href="https://www.linkedin.com/in/eduardo-martins-dias-de-oliveira-ba86a524b/">/eduardo-martins-dias-de-oliveira-ba86a524b/</a></p>
@@ -133,33 +151,6 @@
     </footer>
 
     <!-- JavaScript -->
-
-<script>
-    const btnColorMode = document.querySelector("#mode")
-    const iconTema = btnColorMode.querySelector("img")
-    const temaSalvo = localStorage.getItem("tema");
-
-    // Verifica o tema no LocalStorage
-    if (temaSalvo === "escuro") {
-        document.body.classList.add("temaEscuro");
-        iconTema.src = "img/icons/brightness-high.svg";
-    }
-
-    // Troca o tema ao apertar o botão
-    btnColorMode.addEventListener("click", () =>  {
-        if (document.body.classList.contains("temaEscuro")){
-            
-            document.body.classList.remove("temaEscuro")
-            iconTema.src = "img/icons/brightness-high-fill.svg"
-            localStorage.setItem("tema", "claro")
-
-        } else {
-
-            document.body.classList.add("temaEscuro")
-            iconTema.src = "img/icons/brightness-high.svg"
-            localStorage.setItem("tema", "escuro")
-        }
-    })
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
