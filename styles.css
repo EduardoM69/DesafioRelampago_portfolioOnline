@@ -69,7 +69,12 @@ body.temaEscuro {
         }
         ul > :last-child{
         border: none;
-    }
+        }
+        .ham-menu{
+            .barra{
+                background-color: #f2f2f2;
+            }
+        }
     }
 
     .sessao.primeira{
@@ -85,6 +90,14 @@ body.temaEscuro {
                 img{
                     filter: invert(0.8);      
                 }
+            }
+            &::after {
+                background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(128, 128, 128, 0.4),
+                transparent
+                );
             }
         }
     }
@@ -146,11 +159,9 @@ body.temaEscuro {
     border-radius: 50%;
     padding: 0 1.2vw;
     cursor: pointer;
-    animation-name: appear;
-    animation-duration: 0.8s;
-    animation-delay: 0.8s;
-    animation-fill-mode: forwards;
-    opacity: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     img{
         width: 2vw;
@@ -160,6 +171,11 @@ body.temaEscuro {
 
 /* Menu */
 nav{
+    animation-name: appear;
+    animation-duration: 0.8s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
     z-index: 100;
     position: fixed;
     background-color: var(--bg-nav);
@@ -179,6 +195,13 @@ nav{
         font-weight: bolder;
     }
     
+    .botoes{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1vw;
+    }
+
     .ham-menu{
         display: none;
         cursor: pointer;
@@ -240,6 +263,8 @@ main{
 
 .sessao{
     padding: 3vw;
+    /* Para a navbar não ficar sobre o conteúdo */
+    scroll-margin-top: 3vw;
     
     /* Animação */
     animation-name: fade-in;
@@ -341,7 +366,7 @@ main{
                 background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(255, 255, 255, 0.4),
+                rgba(128, 128, 128, 0.4),
                 transparent
                 );
                 transform: skewX(-25deg);
@@ -495,6 +520,10 @@ main{
             border: 0.025vw solid var(--border-color);
             max-width: 15%;
             transition: all 0.3s;
+
+            position: relative;
+            overflow: hidden;
+
             img{
                 width: 3vw;
                 margin-bottom: 1vw;
@@ -507,6 +536,30 @@ main{
                 a{
                     text-decoration: none;
                     color: var(--txt-p);
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -150%; 
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent
+                );
+                transform: skewX(-25deg);
+                transition: 0.6s;
+            }
+
+            &:hover {
+                color: #5981be;
+
+                &::after {
+                    left: 150%;
                 }
             }
         }
@@ -551,22 +604,28 @@ footer{
 @media screen and (max-width: 991px) {
     
     #mode img{
-        width: 3.5vw;
+        width: 2.6vw;
     }
 
     nav{
         font-size: 1.8vw;
+        .logo{
+            font-size: 3.5vw;
+        }
+        .botoes{
+            margin-right: 2vw;
+    }
         ul{
             position: fixed;
             left: -100%;
-            top: 70px;
+            top: 3.8vw;
             gap: 0;
             flex-direction: column;
             width: 100%;
             text-align: center;
             transition: 0.4s;
             a{
-                border: none;
+                border-right: none !important;
             }
             a:hover{
                 li{font-size: 2.2vw;}
@@ -603,6 +662,7 @@ footer{
         }
     }
     .sessao.primeira{
+        padding-top: 5vw;
         h1{
             color: var(--txt-terc);
             font-size: 7vw;
@@ -694,8 +754,12 @@ footer{
     }
     
     nav{
+        .logo{
+            font-size: 5vw;
+        }
         font-size: 2.8vw;
         ul{
+            top: 6vw;
             a:hover{
                 li{font-size: 3.2vw;}
             }
@@ -708,7 +772,7 @@ footer{
         }
     }
     .sessao.primeira{
-        padding-top: 5vw;
+        padding-top: 8vw;
         h1{
             font-size: 8vw;
         }
@@ -815,13 +879,17 @@ footer{
 
     nav{
         font-size: 4vw;
+        .logo{
+            font-size: 7vw;
+        }
         ul{
+            top: 8.4vw;
             a:hover{
                 li{font-size: 4.6vw;}
             }
         }
     }
-
+ 
     main{
         p{
             font-size: 3.8vw;
@@ -833,6 +901,7 @@ footer{
     margin: 2vw;
 }
     .sessao.primeira{
+        padding-top: 10vw;
         h1{
             font-size: 10vw;
         }
@@ -923,6 +992,7 @@ footer{
                 p{
                     font-size: 2.4vw;
                 }
+                
             }
         }
     }
