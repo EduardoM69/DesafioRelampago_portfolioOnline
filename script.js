@@ -34,4 +34,19 @@ nav_menu.querySelectorAll("a").forEach(e =>
     e.addEventListener("click", () => {
             ham_menu.classList.remove("ativo")
             nav_menu.classList.remove("ativo")
-    }))
+    })
+);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // Se o elemento estiver visível na tela
+        if (entry.isIntersecting) {
+            entry.target.classList.add('ativo');
+        }
+    });
+}, {
+    threshold: 0.10 // Dispara quando 10% do elemento aparece
+});
+
+// Seleciona todos os elementos com a classe .reveal e começa a observar
+document.querySelectorAll('.revela').forEach((el) => observer.observe(el));
