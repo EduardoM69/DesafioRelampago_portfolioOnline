@@ -7,7 +7,7 @@ const nav_menu = document.querySelector(".nav-menu")
 // Verifica o tema no LocalStorage
 if (temaSalvo === "escuro") {
     document.body.classList.add("temaEscuro");
-    iconTema.src = "img/icons/brightness-high.svg";
+    iconTema.src = "assets/img/icons/brightness-high.svg";
 }
 
 // Troca o tema ao apertar o botão
@@ -15,13 +15,13 @@ btnColorMode.addEventListener("click", () =>  {
     if (document.body.classList.contains("temaEscuro")){
         
         document.body.classList.remove("temaEscuro")
-        iconTema.src = "img/icons/brightness-high-fill.svg"
+        iconTema.src = "assets/img/icons/brightness-high-fill.svg"
         localStorage.setItem("tema", "claro")
 
     } else {
 
         document.body.classList.add("temaEscuro")
-        iconTema.src = "img/icons/brightness-high.svg"
+        iconTema.src = "assets/img/icons/brightness-high.svg"
         localStorage.setItem("tema", "escuro")
     }
 })
@@ -34,4 +34,19 @@ nav_menu.querySelectorAll("a").forEach(e =>
     e.addEventListener("click", () => {
             ham_menu.classList.remove("ativo")
             nav_menu.classList.remove("ativo")
-    }))
+    })
+);
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // Se o elemento estiver visível na tela
+        if (entry.isIntersecting) {
+            entry.target.classList.add('ativo');
+        }
+    });
+}, {
+    threshold: 0.10 // Dispara quando 10% do elemento aparece
+});
+
+// Seleciona todos os elementos com a classe .reveal e começa a observar
+document.querySelectorAll('.revela').forEach((el) => observer.observe(el));
