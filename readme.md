@@ -1,38 +1,45 @@
-# Portfólio online
+# Portfólio Online
 
-## Objetivo:
+Este projeto é um portfólio pessoal desenvolvido para apresentar minhas habilidades e projetos, aplicando conceitos de HTML, CSS e UX/UI.
 
-### Criar um portfólio online para apresentar minhas habilidades e alguns dos meus projetos, utilizando os conhecimentos adquiridos nas aulas. Entre outras funcionalidades, esse projeto contará com:
+## 🚀 Funcionalidades
 
-* [X] Deploy no Github Pages.
-* [X] Protótipo no Figma.
-* [X] Responsividade.
-* [X] Animações.
-* [X] Tema escuro.
-* [X] Tags semânticas.
-* [X] Arquivo markdown documentando o projeto.
+* **Deploy:** Hospedado no GitHub Pages.
+* **Design:** Protótipo detalhado no Figma.
+* **Responsividade:** Adaptável a diferentes tamanhos de tela.
+* **Interatividade:** Animações e alternância entre Tema Claro e Escuro.
+* **Boas Práticas:** Uso de tags semânticas e documentação completa.
 
-## Rascunho do site feito no [Figma](https://www.figma.com/design/5dMuOPmVD41dQFvm8WLA8l/portf%C3%B3lioOnline_desafioRel%C3%A2mpago?node-id=9-129&p=f&t=sRyKKyCWSfLg6lot-0):
+## 🎨 Design e Prototipagem
 
-### Paleta de cor escolhida com objetivo de dar um tom leve e de fácil visualização à página.
-### Fonte usada: Inter (Toda a página)
+O rascunho do site foi desenvolvido no [Figma](https://www.figma.com/design/5dMuOPmVD41dQFvm8WLA8l/portf%C3%B3lioOnline_desafioRel%C3%A2mpago?node-id=9-129&p=f&t=sRyKKyCWSfLg6lot-0). 
 
-## Ferramentas usadas:
+* **Paleta de cores:** Escolhida para proporcionar uma visualização leve e moderna.
+* **Tipografia:** Fonte **Inter** utilizada em toda a interface.
 
-### HTML
-No código as sessões da página foram divididas em sessões para manter a organização e visibilidade do código. Foram utilizadas algumas tags semânticas. 
+> ![Preview do Projeto](/assets/img/ImgDoSite.png)
 
-### CSS
-Com o CSS foram implementadas algumas animações e o código foi separado por sessão, poucas classes/ids foram compartilhadas entre as sessões, pois a página é pequena e os cards diferem entre si. No começo da página podemos ver a paleta de cores escolhida inserida nas variáveis CSS. A responsividade foi implementada por meio do uso das medidas **vw** e **%** para dar as dimensões dos elementos da página e o uso de **flexbox** para organizar os elementos. As variáveis do CSS foram usadas para facilitar a implementação do tema escuro.
+## 🛠️ Tecnologias e Ferramentas
+
+### HTML & CSS
+O código foi estruturado de forma modular e semântica. A responsividade foi alcançada utilizando unidades relativas (`vw`, `%`) e **Flexbox**. As cores foram gerenciadas via **variáveis CSS**, o que facilitou a implementação do Dark Mode.
 
 ### JavaScript
-Java Script foi usado para fazer o redirecionamento do click no card para as redes sociais, para fazer a troca de tema de tela e guardar a opção de tema no local storage da página.
+O JavaScript foi essencial para a interatividade da página, sendo utilizado para:
+* **Animações de Scroll:** Implementação do efeito de surgimento (fade-in/reveal) das sessões conforme o usuário navega pela página.
+* **Gerenciamento de Temas:** Lógica para a troca entre modo claro e escuro.
+* **Persistência de Dados:** Uso de `localStorage` para salvar a preferência de tema do usuário.
+* **Navegação:** Redirecionamento dinâmico para redes sociais ao clicar nos cards.
 
-### Figma
-Usado para fazer o protótipo do site. [veja aqui!](https://www.figma.com/design/5dMuOPmVD41dQFvm8WLA8l/portf%C3%B3lioOnline_desafioRel%C3%A2mpago?node-id=9-129&p=f&t=sRyKKyCWSfLg6lot-0)
+### Outras Ferramentas
+* **V0:** Auxílio no conceito inicial de design.
+* **VS Code:** Ambiente de desenvolvimento.
+* **Fontes de Ícones:** [Icons8](https://icon8.com.br), [Bootstrap Icons](https://icons.getbootstrap.com) e [Flaticon](https://flaticon.com).
 
-### V0
-Ajudou na escolha de design inicial da página.
+## 🔗 Acesse o projeto
 
-## Sites usados:
-icon8.com.br; icons.getbootstrap.com; flaticon.com; figma.com; v0.app
+Você pode visualizar o resultado final do portfólio através do link abaixo:
+
+👉 [**Clique aqui para acessar o Portfólio Online**](https://eduardom69.github.io/DesafioRelampago_portfolioOnline/)
+
+---
