@@ -191,6 +191,9 @@ body.temaEscuro {
         width: 2vw;
         height: auto;
     }
+    &:hover{
+        scale: 1.2;
+    }
 }
 
 /* Menu */
@@ -217,6 +220,12 @@ nav{
         text-decoration: none;
         color: var(--txt-terc);
         font-weight: bolder;
+        transition-duration: 0.3s;
+        &:hover{
+            color: var(--btn-color1);
+            scale: 1.05;
+            filter: brightness(1.5);
+        }
     }
     
     .botoes{
@@ -314,6 +323,10 @@ main{
     font-weight: bold;
     letter-spacing: -0.1vw;
     text-align: center;
+    &:hover{
+        scale: 1.03;
+        cursor:default;
+    }
 }
 
 /* Sessão 1 */
@@ -339,6 +352,9 @@ main{
             border-radius: 100%;
             border: 0.15vw solid var(--txt-prin);
         }
+        img:hover{
+            scale: 1.03;
+        }
         p {
             font-style: italic;
             font-size: 1.2vw;
@@ -354,6 +370,10 @@ main{
             color: var(--txt-terc);
             font-size: 5vw;
             font-weight: bold;
+        }
+        h1:hover{
+            scale: 1.03;
+            cursor:default;
         }
         p{
             font-size: 2vw;
@@ -434,6 +454,7 @@ main{
 
                 &::after {
                     left: 150%;
+                transition: 0.6s;
                 }
             }
 
@@ -463,7 +484,7 @@ main{
         }
         .card:hover{
             box-shadow: -2px 7px 5px rgba(0, 0, 0, 0.5);
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.05);
         }
         
     }
